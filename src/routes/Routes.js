@@ -12,7 +12,7 @@ import Home from '../containers/Home';
 import Login from '../containers/Login';
 import { useDispatch } from 'react-redux';
 import {firebase} from '../firebase/firebaseConfig'
-import { login } from '../redux/actions/Login';
+import { createError, login } from '../redux/actions/Login';
 
 const Routes = () => {
 
@@ -23,6 +23,7 @@ const Routes = () => {
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName))
+                dispatch(createError({}))
                 setsIsLoogedIn(true)
             } else {
                 setsIsLoogedIn(false)
