@@ -15,10 +15,10 @@ export const Etiqueta = styled.div`
     display: flex;
     width: 3.5rem;
     height: 1.7rem;
-    border: 2px solid #FED941;
+    border: 2px solid ${(({raiting}) => raiting > 50? '#FED941': '#5F78B2' )};
     border-radius: 0 10rem 10rem 0;
     position: absolute;
     top: 1.5rem;
     background-color: rgba(0, 0, 0, .5);
-    color: white
+    color: white;
 `
