@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components'
 import Header from '../components/layout/Header'
 import ListMovies from '../components/ListMovies'
 import { Container } from './home-styles/HomeStyles'
+import '../styles/style.css'
+import { Route, Switch } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
+import Administrator from '../components/Administrator'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,13 +24,16 @@ const GlobalStyle = createGlobalStyle`
 const Home = () => {
 
     return (
-        <>
+        <BrowserRouter>
         <GlobalStyle />
         <Container>
             <Header />
-            <ListMovies />
+            <Switch>
+              <Route exact path="/" component={ListMovies} />
+              <Route exact path="/admin" component={Administrator} />
+            </Switch>
         </Container>
-        </>
+        </BrowserRouter>
     )
 }
 

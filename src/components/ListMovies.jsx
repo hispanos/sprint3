@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { listMoviesDb, registerMovieDb } from '../redux/actions/Movies'
 import CardFilm from './CardFilm'
+import Carousel from './layout/Carousel'
 import { ContainerMovies, Title } from './list-movies-styles/ListMoviesStyles'
 
 const ListMovies = () => {
@@ -13,10 +14,9 @@ const ListMovies = () => {
         dispatch(listMoviesDb())
     }, [])
 
-    console.log(movies)
-
     return (
         <div>
+            <Carousel />
             <Title>Todas las películas</Title>
             <ContainerMovies>
                 {

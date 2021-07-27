@@ -14,6 +14,9 @@ import { useDispatch } from 'react-redux';
 import {firebase} from '../firebase/firebaseConfig'
 import { createError, login } from '../redux/actions/Login';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle'
+
 const Routes = () => {
 
     const dispatch = useDispatch()
