@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import CardFilm from '../components/CardFilm';
 import useForm from '../hooks/useForm'
 import { startGoogleLogin, startLoginEmailPassword, startRegisterWithEmailPasswordName } from '../redux/actions/Login';
+import { ButtonSend, ContainerForm, ContentForm, Form, Input,H2, H3, P, A, ImgLogin, Span, ImgLogo } from './login-styled/LoginStyled';
 
 const Login = () => {
 
@@ -31,18 +33,19 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h1>Inicia con redes</h1>
-            <img onClick={handleLogin} className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-            {
-                error?.message && <p>{error?.message}</p>
+        <ContainerForm>
+            <CardFilm />
+        <ContentForm>
+            <ImgLogo src="https://i.imgur.com/vcIFPQU.png" alt="" />
+             {
+                error?.message && <Span>{error?.message}</Span>
             }
             {
                 isRegister ?
                 <>
-                <h1>Registrarte</h1>
-                <form onSubmit={handleRegister}>
-                    <input 
+                <H2>Registrarte</H2>
+                <Form onSubmit={handleRegister}>
+                    <Input 
                         type="text"
                         name="name"
                         placeholder="Ingrese su nombre"
@@ -50,7 +53,7 @@ const Login = () => {
                         onChange={handleChangeInput}
                         required
                     />
-                    <input 
+                    <Input 
                         type="email"
                         name="email"
                         placeholder="Ingrese su correo"
@@ -58,7 +61,7 @@ const Login = () => {
                         onChange={handleChangeInput}
                         required
                     />
-                    <input 
+                    <Input 
                         type="password"
                         name="password"
                         placeholder="Ingrese su contraseña"
@@ -66,14 +69,14 @@ const Login = () => {
                         onChange={handleChangeInput}
                         required
                     />
-                    <button type="submit">Registrar</button>
-                </form>
-                <p>Ya tienes cuenta? <a href="#" onClick={() => {setIsRegister(false)}}>Inicia Sesión</a> </p>
+                    <ButtonSend type="submit">Registrar</ButtonSend>
+                </Form>
+                <P>Ya tienes cuenta? <A href="#" onClick={() => {setIsRegister(false)}}>Inicia Sesión</A> </P>
                 </> :
                 <>
-                <h1>Ininiar Sesión</h1>
-                <form onSubmit={handleSubmit}>
-                    <input 
+                <H2>Ininiar Sesión</H2>
+                <Form onSubmit={handleSubmit}>
+                    <Input 
                         type="email"
                         name="email"
                         placeholder="Ingrese su correo"
@@ -81,7 +84,7 @@ const Login = () => {
                         onChange={handleChangeInput}
                         required
                     />
-                    <input 
+                    <Input 
                         type="password"
                         name="password"
                         placeholder="Ingrese su contraseña"
@@ -89,13 +92,16 @@ const Login = () => {
                         onChange={handleChangeInput}
                         required
                     />
-                    <button type="submit">Ingresar</button>
-                </form>
-                <p>No tienes cuenta? <a href="#" onClick={() => {setIsRegister(true)}}>Regístrate</a> </p>
+                    <ButtonSend type="submit">Ingresar</ButtonSend>
+                </Form>
+                <P>No tienes cuenta? <A href="#" onClick={() => {setIsRegister(true)}}>Regístrate</A> </P>
                 </>
             }
-            
-        </div>
+            <H3>Inicia con redes</H3>
+            <ImgLogin onClick={handleLogin} className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
+
+        </ContentForm>
+        </ContainerForm>
     )
 }
 
