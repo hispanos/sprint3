@@ -1,19 +1,13 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { startLogout } from '../redux/actions/Login'
+import Header from '../components/layout/Header'
+import ListMovies from '../components/ListMovies'
 
 const Home = () => {
 
-    const dispatch = useDispatch()
-
-    const handleClose = () => {
-        dispatch(startLogout())
-    }
-
     return (
         <div>
-            Soy Home
-            <button onClick={handleClose}>Cerrar Sesión</button>
+            <Header />
+            <ListMovies />
         </div>
     )
 }
