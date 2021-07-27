@@ -12,7 +12,7 @@ export const ContentModal = styled.div`
     text-align: center;
 `
 export const Modal = styled.div`
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,.9);
     position:fixed;
     top:0;
     right:0;

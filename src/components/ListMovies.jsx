@@ -19,12 +19,10 @@ const ListMovies = () => {
     const {movies} = useSelector(state => state.movies)
     const {moviesRender} = useSelector(state => state.movies)
 
-    //const [moviesShow, setMoviesShow] = useState([])
     const [pagination, setPagination] = useState({start: 0, end: 10})
 
     useEffect(() => {
         dispatch(listMoviesDb())
-        //setMoviesShow(movies.slice(pagination.start, pagination.end))
     }, [])
 
     useEffect(() => {
