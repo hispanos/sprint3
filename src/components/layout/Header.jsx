@@ -14,14 +14,17 @@ const Header = () => {
     }
 
     return (
+        <>
         <Container>
             <Menu>
                 <ImageLogo src="https://i.imgur.com/vcIFPQU.png" />
-                <NavLink to="/"><MenuItem>Inicio</MenuItem></NavLink>
+                <MenuItem><NavLink to="/">Inicio</NavLink></MenuItem>
+                <MenuItem><NavLink to="/admin">Administrar</NavLink></MenuItem>
                 <MenuItem onClick={handleClose}>Cerrar Sesión</MenuItem>
             </Menu>
             <MenuItem>{session.name}</MenuItem>
         </Container>
+        </>
     )
 }
 
