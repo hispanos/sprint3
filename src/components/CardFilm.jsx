@@ -9,7 +9,7 @@ const CardFilm = ({movie}) => {
                 <img src="https://i.imgur.com/sitPeIs.png" alt="Puntuación" />
                 {' '+movie.vote_average}
             </Etiqueta>
-            <ImgFilm src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt='Imagen'/>
+            <ImgFilm src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt='Imagen'/>
         </ContentCard>
     )
 }

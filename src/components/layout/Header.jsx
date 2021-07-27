@@ -1,19 +1,27 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { startLogout } from '../../redux/actions/Login'
+import { Container, Menu, MenuItem, ImageLogo } from './header-styles/HeaderStyles'
 
 const Header = () => {
 
     const dispatch = useDispatch()
+    const session = useSelector(state => state.session)
 
     const handleClose = () => {
         dispatch(startLogout())
     }
 
     return (
-        <div>
-            <button onClick={handleClose}>Cerrar Sesión</button>
-        </div>
+        <Container>
+            <Menu>
+                <ImageLogo src="https://i.imgur.com/vcIFPQU.png" />
+                <NavLink to="/"><MenuItem>Inicio</MenuItem></NavLink>
+                <MenuItem onClick={handleClose}>Cerrar Sesión</MenuItem>
+            </Menu>
+            <MenuItem>{session.name}</MenuItem>
+        </Container>
     )
 }
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { listMoviesDb } from '../redux/actions/Movies'
+import { listMoviesDb, registerMovieDb } from '../redux/actions/Movies'
 import CardFilm from './CardFilm'
-import { ContainerMovies } from './list-movies-styles/ListMoviesStyles'
+import { ContainerMovies, Title } from './list-movies-styles/ListMoviesStyles'
 
 const ListMovies = () => {
 
@@ -16,13 +16,16 @@ const ListMovies = () => {
     console.log(movies)
 
     return (
-        <ContainerMovies>
-            {
-                movies.map((movie, index) => (
-                    <CardFilm key={index} movie={movie} />
-                ))
-            }
-        </ContainerMovies>
+        <div>
+            <Title>Todas las películas</Title>
+            <ContainerMovies>
+                {
+                    movies.map((movie, index) => (
+                        <CardFilm key={index} movie={movie} />
+                    ))
+                }
+            </ContainerMovies>
+        </div>
     )
 }
 
