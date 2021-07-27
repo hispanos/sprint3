@@ -3,7 +3,8 @@ const types = {
     logout: 'When user is logout',
     error: 'When a error ocurred',
     listMovie: 'Show a movies list',
-    newMovie: 'Add a new movie'
+    newMovie: 'Add a new movie',
+    listMovieRender: 'List movies renders'
 }
 
 export default types;

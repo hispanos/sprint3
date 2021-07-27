@@ -13,6 +13,13 @@ const MoviesReducer = (state = {movies: []}, action) => {
                 ...state,
                 movies: [action.payload, ...state.movies]
             }
+
+        case types.listMovieRender:
+            return {
+                ...state,
+                movies: [...state.movies],
+                moviesRender: action.payload
+            }
     
         default:
             return state;

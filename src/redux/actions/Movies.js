@@ -43,6 +43,13 @@ export const listMovies = (movies) => {
     }
 }
 
+export const listMoviesRender = (movies) => {
+    return {
+        type: types.listMovieRender,
+        payload: movies
+    }
+}
+
 export const listMoviesDb = () => {
     return async(dispatch) => {
         const data = await db.collection('/movies').get();
@@ -51,5 +58,6 @@ export const listMoviesDb = () => {
             movies.push(movie.data())
         });        
         dispatch(listMovies(movies))
+        dispatch(listMoviesRender(movies.slice(0, 10)))
     }
 }
