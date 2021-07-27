@@ -17,7 +17,7 @@ const ModalMovie = ({dataModal, setShowModal}) => {
                     <ImgFilmModal src={`https://image.tmdb.org/t/p/w500${dataModal.poster_path}`} alt='Imagen'/>
                 </ContentCard>
                 <ContentDetalle>
-                    <h2>{dataModal.original_title}</h2>
+                    <h2>{dataModal.title}</h2>
                     <p>{dataModal.overview}</p>
                     <span>{dataModal.release_date}</span>
                     <ContentButtonAction>
