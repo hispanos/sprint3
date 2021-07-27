@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { listMoviesDb, registerMovieDb } from '../redux/actions/Movies'
+import CardFilm from './CardFilm'
 
 const ListMovies = () => {
 
@@ -17,7 +18,7 @@ const ListMovies = () => {
         <div>
             {
                 movies.map((movie) => (
-                    <h1>{movie.title}</h1>
+                    <CardFilm />
                 ))
             }
         </div>

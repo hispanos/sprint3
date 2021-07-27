@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import CardFilm from '../components/CardFilm';
 import useForm from '../hooks/useForm'
 import { startGoogleLogin, startLoginEmailPassword, startRegisterWithEmailPasswordName } from '../redux/actions/Login';
 import { ButtonSend, ContainerForm, ContentForm, Form, Input,H2, H3, P, A, ImgLogin, Span, ImgLogo } from './login-styled/LoginStyled';
@@ -34,7 +33,6 @@ const Login = () => {
 
     return (
         <ContainerForm>
-            <CardFilm />
         <ContentForm>
             <ImgLogo src="https://i.imgur.com/vcIFPQU.png" alt="" />
              {
