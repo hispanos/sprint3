@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContentCard, Etiqueta, ImgFilm } from './card-film-styled/CardFilmStyled'
 import CardFilm from './CardFilm'
-import { ButtonBack, ContentButtonAction, ContentDetalle, ContentModal, ImgFilmModal, Modal } from './modal-movie-styled/modalMovieStyled'
+import { ButtonBack, ContentButtonAction, ContentDetalle, ContentModal, ImgFilmModal, Modal, SpanDate } from './modal-movie-styled/modalMovieStyled'
 
 const ModalMovie = ({dataModal, setShowModal}) => {
     console.log(dataModal)
@@ -19,7 +19,7 @@ const ModalMovie = ({dataModal, setShowModal}) => {
                 <ContentDetalle>
                     <h2>{dataModal.title}</h2>
                     <p>{dataModal.overview}</p>
-                    <span>{dataModal.release_date}</span>
+                    <SpanDate>Lanzamiento: {dataModal.release_date}</SpanDate>
                     <ContentButtonAction>
                         <button>Ver ahora</button>
                         <button>Ver más tarde</button>

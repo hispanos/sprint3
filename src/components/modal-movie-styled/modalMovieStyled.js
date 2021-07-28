@@ -63,3 +63,7 @@ export const ContentButtonAction = styled.div`
         padding: 0.4rem 1rem;
     }
 `
+
+export const SpanDate = styled.span`
+    color: #fff;
+`;

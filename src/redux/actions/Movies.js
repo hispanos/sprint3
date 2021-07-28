@@ -61,3 +61,21 @@ export const listMoviesDb = () => {
         dispatch(listMoviesRender(movies.slice(0, 10)))
     }
 }
+
+export const Delete = (id) => {
+    return async (dispatch, getState) => {
+
+        try {
+            const document = db.collection('movies').where('id','==',id);
+            const response = await document.get()
+            response.docs.forEach(movie => {
+                movie.ref.delete();
+            });
+            dispatch(listMoviesDb())
+            return true;
+        } catch (error) {
+            return false
+        } 
+
+    }
+}
