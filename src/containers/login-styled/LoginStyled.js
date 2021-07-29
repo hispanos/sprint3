@@ -23,6 +23,12 @@ export const Form = styled.form`
     row-gap: 1.5rem;
     margin-top: 2.4rem;
 `
+export const FormSign = styled.form`
+    width: 100%;
+    display: grid;
+    row-gap: 1.5rem;
+    margin-top: 2.4rem;
+`
 export const Input = styled.input`
     border-radius: 10px;
     padding: 10px;
