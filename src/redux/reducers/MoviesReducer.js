@@ -20,7 +20,6 @@ const MoviesReducer = (state = {movies: []}, action) => {
                 movies: [...state.movies],
                 moviesRender: action.payload
             }
-    
         default:
             return state;
     }

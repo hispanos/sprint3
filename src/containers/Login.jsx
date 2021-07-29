@@ -24,8 +24,6 @@ const Login = () => {
             password: yup.string().min(10, 'La contraseña debe ser mayor a 10 caracteres').required('Campo requerido'),
         }),
         onSubmit: (data) => {
-            console.log(formikRegister)
-            console.log(data)
             dispatch(startRegisterWithEmailPasswordName(data.email, data.password, data.name))
         }
     })
@@ -40,7 +38,6 @@ const Login = () => {
             signPassword: yup.string().required('Este campo es requerido')
         }),
         onSubmit: (data) => {
-            console.log(data)
             dispatch(startLoginEmailPassword(data.signEmail, data.signPassword))
         }
     })
@@ -48,7 +45,6 @@ const Login = () => {
     const handleLogin = () => {
         dispatch(startGoogleLogin())
     }
-console.log(formikSign)
     return (
         <ContainerForm>
         <ContentForm>

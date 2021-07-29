@@ -3,6 +3,7 @@ const types = {
     logout: 'When user is logout',
     error: 'When a error ocurred',
     listMovie: 'Show a movies list',
+    listMovieSearch: 'List movies search',
     newMovie: 'Add a new movie',
     listMovieRender: 'List movies renders',
     deleteMovie: 'Delete a movie'

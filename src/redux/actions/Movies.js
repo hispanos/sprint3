@@ -79,3 +79,27 @@ export const Delete = (id) => {
 
     }
 }
+
+
+
+// busqueda a la base de datos que vuelve a llamar los datos
+
+// export const listSearch = (searchText) => async (dispatch) => {
+//     const data = await db.collection(`/movies`).where('title','==', searchText).get();
+//     const movies = [];
+
+//     data.forEach(element => {
+//         movies.push({...element.data()})
+//     });
+//     dispatch(listMoviesRender(movies))
+// }
+
+
+// Busqueda con lo que ya tengo en el store
+export const listSearchStore = (searchText) => (dispatch, getState) => {
+    const {movies} = getState().movies
+    const filterSearch = movies.filter(ele =>
+        (ele.title.toLowerCase().includes(searchText.toLowerCase()))
+        )
+    dispatch(listMoviesRender(filterSearch))
+}
