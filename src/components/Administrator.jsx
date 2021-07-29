@@ -56,7 +56,7 @@ const Administrator = () => {
             isDummyField: true,
             formatter: (cellContent, row) => {
                 return (
-                  <ImageMovie src={`https://image.tmdb.org/t/p/w500${row.backdrop_path}`} alt="Imagen" />
+                  <ImageMovie src={row?.image ? row?.image :`https://image.tmdb.org/t/p/w500${row.poster_path}`} alt="Imagen" />
                 );
             }
         },

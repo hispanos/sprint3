@@ -103,3 +103,20 @@ export const listSearchStore = (searchText) => (dispatch, getState) => {
         )
     dispatch(listMoviesRender(filterSearch))
 }
+
+
+export const addNewMovie = (movie) => async (dispatch) => {
+
+    const newMovie = {
+        title: movie.title,
+        video: movie.video,
+        image: movie.image,
+        overview: movie.overview,
+        release_date: movie.release_date,
+        id: movie.title + movie.video,
+        vote_average: movie.vote_average
+    }
+    await db.collection('/movies').add(newMovie)
+    dispatch(registerMovie(newMovie))
+
+}

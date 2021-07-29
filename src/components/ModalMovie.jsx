@@ -14,7 +14,7 @@ const ModalMovie = ({dataModal, setShowModal}) => {
                         <img src="https://i.imgur.com/sitPeIs.png" alt="Puntuación" />
                         {' '+dataModal.vote_average}
                     </Etiqueta> */}
-                    <ImgFilmModal src={`https://image.tmdb.org/t/p/w500${dataModal.poster_path}`} alt='Imagen'/>
+                    <ImgFilmModal src={dataModal?.image ? dataModal?.image :`https://image.tmdb.org/t/p/w500${dataModal.poster_path}`} alt='Imagen'/>
                 </ContentCard>
                 <ContentDetalle>
                     <h2>{dataModal.title}</h2>

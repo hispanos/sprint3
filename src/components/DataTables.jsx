@@ -4,6 +4,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import '../styles/table.css'
+import AddFilm from './AddFilm';
 
 const DataTables = ({data, columns}) => {
 
@@ -24,6 +25,7 @@ const DataTables = ({data, columns}) => {
                     { ...props.searchProps }
                     placeholder="Buscar algo"
                 />
+                <AddFilm />
                 <BootstrapTable
                     { ...props.baseProps }
                     pagination={ paginationFactory() }
